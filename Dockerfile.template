@@ -1,0 +1,12 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-debian:jessie
+
+WORKDIR /usr/src/app
+
+RUN     apt-get update \
+     && apt-get install \
+           python3-dbus
+
+COPY start.sh ./
+COPY *.py ./
+
+CMD ["bash", "start.sh"]
