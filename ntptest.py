@@ -59,7 +59,11 @@ class NTPQuery:
     def get_raw_status(self):
         """Get the dbus properties of timedate1
         """
-        return self._interface.GetAll('org.freedesktop.timedate1')
+        try:
+            properties = self._interface.GetAll('org.freedesktop.timedate1')
+        except dbus.exceptions.DBusException as err:
+            raise err
+        return properties
 
     def get_status(self):
         """Get all available status from timedate1
