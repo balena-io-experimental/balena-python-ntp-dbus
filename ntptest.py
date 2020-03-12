@@ -16,7 +16,7 @@ $ dbus-send \
   org.freedesktop.DBus.Properties.GetAll \
   string:"org.freedesktop.timedate1"
 
-On resin.io devices need to set the system dbus address:
+On balena.io devices need to set the system dbus address:
 DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 """
 from time import sleep
