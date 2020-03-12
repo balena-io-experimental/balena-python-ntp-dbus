@@ -1,0 +1,7 @@
+version: '2.1'
+
+services:
+  main:
+    build: .
+    labels: 
+      'io.balena.features.dbus': '1'
